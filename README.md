@@ -16,7 +16,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 
 ## Karakter frekansları
 
- Algoritmada kullandığım karakter frekansı.[Detaylı bilgiye burdan ulaşabilirsiniz.](https://en.wikipedia.org/wiki/Letter_frequency)
+ Algoritmada kullandığım karakter frekansı. [Detaylı bilgiye burdan ulaşabilirsiniz.](https://en.wikipedia.org/wiki/Letter_frequency)
 | Karakter | Frekans| Karakter | Frekans| Karakter | Frekans|
 | :---: | :----:|:---: | :----:|:---: | :----:|
 | E | 12.7| T | 9.1| A | 8.2 |
