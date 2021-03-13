@@ -5,7 +5,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 ## Amaç
 
 * Klasik bir ingilizce kitaptan Substitution Cipher yöntemi ile şifrenilen metinin çözülmesi.
-* Şifresi çözülmüş metinin tekrar Substitution Cipher yöntemi ile tekrar şifrenmesi.
+* Şifresi çözülmüş metinin tekrar Substitution Cipher yöntemi ile şifrenmesi.
 
 ## Yöntem
 
