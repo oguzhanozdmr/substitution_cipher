@@ -14,7 +14,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 * Çıkartılan frekans ile harf haritaları oluşturuldu.
 * Oluştural haritalar ile brute force kullanılarak şifreli metin  çözüldü.
 
-## Karakter frekansları
+## Karakter frekansı
 
  Algoritmada kullandığım karakter frekansı. [Detaylı bilgiye burdan ulaşabilirsiniz.](https://en.wikipedia.org/wiki/Letter_frequency)
 | Karakter | Frekans| Karakter | Frekans| Karakter | Frekans|
