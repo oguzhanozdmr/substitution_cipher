@@ -27,6 +27,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 | F | 2.2| G | 2.0| Y | 2.0 |
 | P | 1.9| B | 1.5| V | 1.0 |
 | K | 0.8| J | 0.15| X | 0.15 |
+| Q | 0.1| Z | 0.07 | | |
 
 ## Çözülen Şifre
 
@@ -40,6 +41,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 | C | v| S | c| Y | g |
 | D | p| P | b| R | d |
 | W | l| B | j| G | k |
+| H | z| V | q |||
 
 ---
 **Şifrelenmiş Metin**
