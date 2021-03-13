@@ -1,21 +1,21 @@
 # Substitution Cipher
----
+
 Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine alfabedeki farklı bir karakter kullanılmaktadır. Substitution Cipher şifreleyen ve şifreyi çözen uygulama geliştirdim.
 
 ## Amaç
----
+
 * Klasik bir ingilizce kitaptan Substitution Cipher yöntemi ile şifrenilen metinin çözülmesi.
 * Şifresi çözülmüş metinin tekrar Substitution Cipher yöntemi ile tekrar şifrenmesi.
 
 ## Yöntem
----
+
 * İngilizcede kullanılan karakterlerin frekansları incellendi.
 * Şifrelenmiş metinin karakterlerin frekansı çıkartıldı. 
 * Çıkartılan frekans ile harf haritaları oluşturuldu.
 * Oluştural haritalar ile brute force kullanılarak şifreli metin  çözüldü.
 
 ## Karakter frekansları
----
+
  Algoritmada kullandığım karakter frekansı.[Detaylı bilgiye burdan ulaşabilirsiniz.](https://en.wikipedia.org/wiki/Letter_frequency)
 | Karakter | Frekans| Karakter | Frekans| Karakter | Frekans|
 | :---: | :----:|:---: | :----:|:---: | :----:|
@@ -29,7 +29,7 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 | K | 0.8| J | 0.15| X | 0.15 |
 
 ## Çözülen Şifre
----
+
 | Şifreli Karakter | Çözülen Karakter | Şifreli Karakter | Çözülen Karakter | Şifreli Karakter | Çözülen Karakter | 
 | :---: | :----:|:---: | :----:|:---: | :----:|
 | N | e| F | h| M | t |
@@ -40,6 +40,8 @@ Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine 
 | C | v| S | c| Y | g |
 | D | p| P | b| R | d |
 | W | l| B | j| G | k |
+
+---
 **Şifrelenmiş Metin**
 ---
 
