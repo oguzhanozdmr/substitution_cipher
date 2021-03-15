@@ -1,6 +1,6 @@
 # Substitution Cipher
 
-Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine alfabedeki farklı bir karakter kullanılmaktadır. Proje Substitution Cipher yöntemi ile şifrelemek ve şifreyi çözmek için geliştirildi.
+Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine alfabedeki farklı bir karakter kullanılmaktadır. Substitution Cipher yöntemi ile şifrelemek ve şifreyi çözmek için geliştirildi.
 
 ## Amaç
 
