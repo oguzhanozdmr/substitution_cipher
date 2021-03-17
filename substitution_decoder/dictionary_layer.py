@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-
+"""
+@author: Oguzhan Ozdemir
+"""
+# pylint: disable=C0116
+#TODO will be added to word add function
 import pickle
 from os.path import isfile
-
-"""
-Sözlükte veriler karakter sayısına indexli dic olarak tutulmaktadır.
-"""
 
 
 class WordDictionary:
@@ -15,11 +15,10 @@ class WordDictionary:
         self.__read_dictionary()
 
     def __check_file(func):
-        def wrapper(self, *args):
+        def wrapper(self):
             assert isfile(self.__path), f"Not found {self.__path}"
-            return_value = func(self, *args)
+            return_value = func(self) # pylint: disable=E1102
             return return_value
-
         return wrapper
 
     @__check_file
@@ -36,8 +35,8 @@ class WordDictionary:
                 pickle.dump(self.__words, handle)
                 handle.close()
                 return_value = True
-        except Exception as e:
-            raise Exception("Sorry, Word could not be added", e.__class__)
+        except Exception as catch:
+            raise Exception("Sorry, Word could not be added", catch.__class__)
         return return_value
 
     def find_word(self, word: str) -> bool:
@@ -56,7 +55,6 @@ class WordDictionary:
         :return most popular word:
         """
         assert isinstance(character_size, int)
-        return_list = []
         most_used_words = """
         be to of in it on he as do at by we or an my so up if go me no us the and for not you but his say her she 
         one all out who get can him see now its use two how our way new any day  that have with this from they will

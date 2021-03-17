@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+@author: Oguzhan Ozdemir
+"""
+# pylint: disable=C0116
 
 from os.path import isfile
 import decoder_text
@@ -15,7 +19,7 @@ def read_txt(path: str = r'example/sifreli_metin.txt', encoding: str = "utf-8"):
     return txt
 
 
-def write_txt(txt: str, path: str = r"example/acik_metin.txt", encoding = "utf-8"):
+def write_txt(txt: str, path: str = r"example/acik_metin.txt", encoding: str = "utf-8"):
     if txt:
         with open(path, 'w+', encoding=encoding) as file:
             file.write(txt)
@@ -28,6 +32,7 @@ def main():
     decoder = decoder_text.DecoderText()
     new_txt = decoder.decoding_text(txt)
     write_txt(new_txt)
+    print(new_txt)
 
 
 if __name__ == "__main__":

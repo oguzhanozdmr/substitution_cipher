@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-
+"""
+@author: Oguzhan Ozdemir
+"""
+# pylint: disable=C0116
+# pylint: disable=R0201
 import string
 from dictionary_layer import WordDictionary
 
@@ -9,7 +13,10 @@ class DecoderText:
         self.__dictionary = WordDictionary()
         self.__get_char_freq_tolerance()
         self._crypto_key = {}
-        self.__not_found_char = [*string.ascii_lowercase]
+        self.__undefined_character = {}
+        self._character_frequency = {}
+        self._character_frequency_tolerance = self.__get_char_freq_tolerance()
+        self.most_character_frequency = self.__dictionary.get_character_frequency()
 
     def _clear_txt(self, raw_txt: str):
         punctuation_char = string.punctuation
@@ -22,9 +29,7 @@ class DecoderText:
         return " ".join(raw_txt)
 
     def __txt_to_list(self, get_list):
-        to_list = get_list.strip().split(' ')
-        to_list = [word for word in to_list]
-        return to_list
+        return get_list.strip().split(' ')
 
     def __get_character_frequency(self, word_list: list, word_size: int):
         assert isinstance(word_size, int)
@@ -65,10 +70,9 @@ class DecoderText:
         return txt
 
     def __get_char_freq_tolerance(self, frequency_tolerance: int = 1.5):
-        self._character_frequency_tolerance = dict([(char, frequency_tolerance) for char in string.ascii_uppercase])
+        return dict([(char, frequency_tolerance) for char in string.ascii_uppercase])
 
     def _get_char_map(self, char_frequency: dict) -> dict:
-        self.most_character_frequency = self.__dictionary.get_character_frequency()
         key_map = {}
         for character in char_frequency:
             tolerance = self._character_frequency_tolerance[character]
@@ -78,8 +82,8 @@ class DecoderText:
                 min_frequency = 0
             max_frequency = self._character_frequency[character] + tolerance
             max_frequency = round(max_frequency, 2)
-            key_map[character] = [_letter.lower() for _letter in self.most_character_frequency
-                                  if min_frequency <= self.most_character_frequency[_letter] <= max_frequency]
+            key_map[character] = [_char.lower() for _char in self.most_character_frequency
+                                  if min_frequency <= self.most_character_frequency[_char] <= max_frequency]
         return key_map
 
     def __match_char(self, chars_map: dict) -> dict:
@@ -89,8 +93,8 @@ class DecoderText:
                 self.most_character_frequency.pop(chars_map[character][0].upper())
         for decoder_char in self._crypto_key:
             _char = self._crypto_key[decoder_char]
-            for map in chars_map:
-                chars_map[map] = [char for char in chars_map[map] if char != _char]
+            for char_index in chars_map:
+                chars_map[char_index] = [char for char in chars_map[char_index] if char != _char]
             if decoder_char in chars_map:
                 chars_map.pop(decoder_char)
         return chars_map
@@ -104,7 +108,6 @@ class DecoderText:
     def __is_solve(self, text_array) -> list:
         resoled_list = set()
         for text in text_array:
-            resolve = 0
             not_resolved = 0
             txt_set = set(text)
             if len(txt_set) > 1:
@@ -113,7 +116,6 @@ class DecoderText:
                         not_resolved += 1
                 if not_resolved == 1:
                     resoled_list.add(text)
-
         return list(resoled_list)
 
     def _get_word(self, word_map: dict, word_size: int):
@@ -122,7 +124,7 @@ class DecoderText:
         for word in most_used_word:
             is_suitable = True
             for i in word_map:
-               if word[i] != word_map[i]:
+                if word[i] != word_map[i]:
                     is_suitable = False
                     break
             if is_suitable:
@@ -147,8 +149,8 @@ class DecoderText:
         return set(words)
 
     def __first_value(self, dic_list: dict):
+        first_value = ""
         if dic_list:
-            first_value = ""
             for index in dic_list:
                 first_value = str(dic_list[index]).upper()
         return first_value
@@ -176,12 +178,11 @@ class DecoderText:
         return char_map
 
     def __update_map_tolerance(self, char: dict):
-        key_map = []
         self._character_frequency_tolerance[char] += 1.5
         tolerance = self._character_frequency_tolerance[char]
         min_frequency = self._character_frequency[char] - tolerance
         min_frequency = round(min_frequency, 2)
-        if min_frequency < 0: 
+        if min_frequency < 0:
             min_frequency = 0
         max_frequency = self._character_frequency[char] + tolerance
         max_frequency = round(max_frequency, 2)
@@ -200,8 +201,10 @@ class DecoderText:
             if clean_txt:
                 charter_size = len(clean_txt.replace(' ', ''))
                 text_array = self.__txt_to_list(clean_txt)
+
                 character_frequency, self.__undefined_character = self.__get_character_frequency(text_array,
                                                                                                  charter_size)
+
                 if len(self.__undefined_character) > 0:
                     text_array = self._delete_undefined_character(text_array)
 
@@ -246,4 +249,5 @@ class DecoderText:
         else:
             return ""
         new_txt = self.__return_txt(raw_txt)
+        print("map ->", self._crypto_key)
         return new_txt
