@@ -32,7 +32,6 @@ def main():
     decoder = decoder_text.DecoderText()
     new_txt = decoder.decoding_text(txt)
     write_txt(new_txt)
-    print(new_txt)
 
 
 if __name__ == "__main__":

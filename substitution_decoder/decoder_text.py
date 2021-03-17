@@ -249,5 +249,4 @@ class DecoderText:
         else:
             return ""
         new_txt = self.__return_txt(raw_txt)
-        print("map ->", self._crypto_key)
         return new_txt
