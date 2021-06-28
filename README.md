@@ -1,10 +1,10 @@
 # Substitution Cipher
 
-Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine alfabedeki farklı bir karakter kullanılmaktadır. Substitution Cipher yöntemi ile şifrelemek ve şifreyi çözmek için geliştirildi.
+Substitution Cipher, şifrelemek için alfabede bulunan her bir karakter yerine alfabedeki farklı bir karakter kulanmaktadır. Substitution Cipher yöntemi  ile metin şifrelemek ve şifreli metini çözmek için geliştirildi.
 
 ## Amaç
 
-* Klasik bir ingilizce kitaptan Substitution Cipher yöntemi ile şifrenilen metinin çözülmesi.
+* Klasik bir ingilizce kitabından alımış metini Substitution Cipher yöntemi ile şifrenilen metinin çözülmesi.
 * Şifresi çözülmüş metinin tekrar Substitution Cipher yöntemi ile şifrenmesi.
 
 ## Yöntem
